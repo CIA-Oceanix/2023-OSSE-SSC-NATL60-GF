@@ -114,10 +114,10 @@ def var_based_scores(da_rec, da_ref):
     """
     lat_rad = np.radians(da_rec.lat).values
     lon_rad = np.radians(da_rec.lon).values
-    div_gt, strain_gt = _compute_div_strain_with_lat_lon(
+    div_gt, curl_gt, strain_gt = _compute_div_curl_strain_with_lat_lon(
         da_ref.u, da_ref.v, lat_rad, lon_rad, sigma=1.,
     )
-    div_uv_rec, strain_uv_rec = _compute_div_strain_with_lat_lon(
+    div_uv_rec, curl_uv_rec, strain_uv_rec = _compute_div_curl_strain_with_lat_lon(
         da_rec.u, da_rec.v, lat_rad, lon_rad, sigma=1.,
     )
 
@@ -125,10 +125,10 @@ def var_based_scores(da_rec, da_ref):
     tau_uv = _var_mse_uv(da_rec.u, da_rec.v, da_ref.u, da_ref.v)
 
     # Compute tau_vort
-    tau_vort = np.nan  # Pas encore trouvé
+    tau_vort = _compute_var_exp(curl_gt, curl_uv_rec)
 
     # Compute tau_div
-    tau_div = _compute_var_exp(div_gt, div_uv_rec)  # Pas au point
+    tau_div = _compute_var_exp(div_gt, div_uv_rec)
 
     # Compute tau_strain
     tau_strain = _compute_var_exp(strain_gt, strain_uv_rec)
@@ -177,7 +177,7 @@ def _compute_var_exp(x, y, dw=3):
     return 100. * (1. - mse / var)
 
 
-def _compute_div_strain_with_lat_lon(u, v, lat, lon, sigma=1.):
+def _compute_div_curl_strain_with_lat_lon(u, v, lat, lon, sigma=1.):
     dlat = lat[1] - lat[0]
     dlon = lon[1] - lon[0]
 
@@ -202,9 +202,10 @@ def _compute_div_strain_with_lat_lon(u, v, lat, lon, sigma=1.):
     dv_dx = dv_dx / dx_from_dlon
 
     strain = np.sqrt((dv_dx + du_dy)**2 + (du_dx - dv_dy)**2)
+    curl = du_dy - dv_dx
     div = du_dx + dv_dy
 
-    return div, strain
+    return div, curl, strain
 
 
 def _compute_dx_dy(lat, lon, dlat, dlon):

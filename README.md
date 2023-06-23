@@ -6,6 +6,30 @@ This repository is linked to the following research paper:
 > currents from satellite-derived SST-SSH synergies with 4DVarNets.
 > [⟨arxiv⟩](https://doi.org/10.48550/arXiv.2211.13059)
 
+See the [notebook](notebook.ipynb) for results.
+
+
+## Data
+
+The studied oceanographic region is located between (33°N, 65°W) and (43°N, 55°W). The considered simulation dataset relies on a nature run of the NATL60 configuration [Ajayi et al., 2020] of the NEMO
+(Nucleus for European Modeling of the Ocean) model [Madec et al., 2022]. The simulation is run without tidal forcing.
+
+In the notebook, only the evaluation period is used to compute the scores (from 2012-10-22 to 2012-12-03).
+
+The data are distributed by AVISO+ (see [here](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60/wiki/AVISO---account-creation) to download) in netCDF4 format. The data are also available (temporarily) [here](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/catalog/meomopendap/extract/ocean-data-challenges/dc_data1/catalog.html) or by executing the following commands:
+
+Observation data (~400 Mb):
+```bash
+wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_data1/dc_obs.tar.gz
+```
+
+Reference data (~11 Gb):
+```bash
+wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_data1/dc_ref.tar.gz
+```
+
+See [SSH Mapping Data Challenge 2020a](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60) README for more information.
+
 
 ## Leaderboard
 

@@ -1,5 +1,7 @@
 # 2023 OSSE SSC NATL60 GF
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8076318.svg)](https://doi.org/10.5281/zenodo.8076318)
+
 This repository is linked to the following research paper:
 
 > Fablet, R, Chapron, B, Sommer, J, Sévellec, F. Inversion of sea surface

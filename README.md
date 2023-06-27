@@ -1,6 +1,6 @@
 # 2023 OSSE SSC NATL60 GF
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8076318.svg)](https://doi.org/10.5281/zenodo.8076318)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8087397.svg)](https://doi.org/10.5281/zenodo.8087397)
 
 This repository is linked to the following research paper:
 

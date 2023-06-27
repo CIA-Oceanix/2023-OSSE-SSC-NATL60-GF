@@ -18,19 +18,21 @@ The studied oceanographic region is located between (33°N, 65°W) and (43°N, 5
 
 In the notebook, only the evaluation period is used to compute the scores (from 2012-10-22 to 2012-12-03).
 
-The data are distributed by AVISO+ (see [here](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60/wiki/AVISO---account-creation) to download) in netCDF4 format. The data are also available (temporarily) [here](https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/catalog/meomopendap/extract/ocean-data-challenges/dc_data1/catalog.html) or by executing the following commands:
+The reference data can be retrieved with the following commands:
 
-Observation data (~400 Mb):
-```bash
-wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_data1/dc_obs.tar.gz
+```sh
+# SSH (~ 3.8 Gb)
+wget https://s3.eu-central-1.wasabisys.com/melody/NATL/ref/NATL60-CJM165_NATL_ssh_y2013.1y.nc
+
+# SST (~ 3.8 Gb)
+wget https://s3.eu-central-1.wasabisys.com/melody/NATL/ref/NATL60-CJM165_NATL_sst_y2013.1y.nc
+
+# U (~ 3.8 Gb)
+wget https://s3.eu-central-1.wasabisys.com/melody/NATL/ref/NATL60-CJM165_NATL_u_y2013.1y.nc
+
+# V (~ 3.8 Gb)
+wget https://s3.eu-central-1.wasabisys.com/melody/NATL/ref/NATL60-CJM165_NATL_v_y2013.1y.nc
 ```
-
-Reference data (~11 Gb):
-```bash
-wget https://ige-meom-opendap.univ-grenoble-alpes.fr/thredds/fileServer/meomopendap/extract/ocean-data-challenges/dc_data1/dc_ref.tar.gz
-```
-
-See [SSH Mapping Data Challenge 2020a](https://github.com/ocean-data-challenges/2020a_SSH_mapping_NATL60) README for more information.
 
 
 ## Leaderboard
